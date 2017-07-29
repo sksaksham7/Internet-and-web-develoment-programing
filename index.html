@@ -1,0 +1,158 @@
+<?php
+session_start();
+?>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="stylesheet.css">
+      <title>
+          THE TRAVEL ENTHUSIAST
+      </title>
+
+  </head>
+
+  <body class="index">
+
+
+
+<?php
+   $_SESSION["login"] = "no";
+?>
+
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="https://www.facebook.com/Studentwasim">FB</a>
+  <a href="https://www.quora.com/profile/Wasim-Akram-94">QUORA</a>
+  <a href="https://www.instagram.com/studentwasim/">INSTA</a>
+</div>
+
+<div id="main">
+
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="travelmap.html">Travel Map</a></li>
+  <li><a href="http://localhost/myfiles/totravellist.php">To Travel List</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Food and Travel Diaries</a>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="food and travel diaries/austrialia.html">Australia</a>
+      <a href="food and travel diaries/india.html">India</a>
+      <a href="food and travel diaries/singapore.html">Singapore</a>
+      <a href="food and travel diaries/Scotland.html">Scotland</a>
+    </div>
+  </li>
+  <li><a href="topdest/index.html">Top Destinations</a></li>
+  <li><a href="packing/index.html">Packing Guide</a></li>
+</ul>
+
+<br>
+<br>
+<br>
+
+
+
+<div class="slideshow-container" style="text-align:center">
+
+<div class="mySlides fade">
+  <img src="QUOTES/083-explore2-1440x900-A-1024x640.jpg" style="width:640px;height:360px;">
+</div>
+
+<div class="mySlides fade">
+  <img src="QUOTES/ed3ca30a37018597d14ff872a473f003.jpg" style="width:640px;height:360px;">
+</div>
+
+<div class="mySlides fade">
+  <img src="QUOTES/142543adb12e2d4c01fd8da94e90837c.jpg" style="width:640px;height:360px;">
+</div>
+
+<div class="mySlides fade">
+  <img src="QUOTES/The-world-is-a-book.jpg" style="width:640px;height:360px;">
+</div>
+
+<div class="mySlides fade">
+  <img src="QUOTES/TRAVEL-RICHER-QUOTE-INSPIRATION.jpg" style="width:640px;height:360px;">
+</div>
+
+<div class="mySlides fade">
+ <img src="QUOTES/travel-quote-1.jpg" style="width:640px;height:360px;">
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+    <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+<br><br>
+<br><br>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+</div>
+      <script>
+
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 4000); // Change image every 4 seconds
+}
+
+
+    function myFunction()
+    {
+    document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+
+    window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var d = 0; d < dropdowns.length; d++) {
+      var openDropdown = dropdowns[d];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+      </script>
+
+
+  </body>
+</html>
